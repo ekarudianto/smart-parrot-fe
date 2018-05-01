@@ -1,23 +1,20 @@
-const timeout = 5000;
 
-describe(
-  '/ (Home Page)',
-  () => {
+describe('/ (Home Page)',() => {
     let page;
+    const WEB_PAGE = 'http://localhost:8081'
 
     beforeAll(async () => {
       page = await global.__BROWSER__.newPage();
-      await page.goto('https://google.com');
-    }, timeout);
+      await page.goto(WEB_PAGE);
+    });
 
     afterAll(async () => {
       await page.close()
     });
 
-    it('should load without error', async () => {
-      let text = await page.evaluate(() => document.body.textContent)
-      expect(text).toContain('google')
+    it('Should have correct title', async () => {
+      let title = await page.evaluate(() => document.querySelector('h2').textContent);
+      expect(title).toContain('Hello World');
     })
-  },
-  timeout
-)
+  }
+);

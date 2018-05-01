@@ -10,8 +10,8 @@
     "build": "webpack",
     "serve": "webpack-dev-server",
     "start": "webpack-dev-server --port $PORT",
-    "test:unit": "test=unit jest ./test/unit -u --coverage",
-    "test:e2e": "test=e2e jest ./test/e2e -u --coverage",
+    "test:unit": "test=unit jest ./test/unit -u",
+    "test:e2e": "test=e2e jest ./test/e2e",
     "test": "yarn test:unit && yarn test:e2e"
   },
   "devDependencies": {
