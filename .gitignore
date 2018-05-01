@@ -1,4 +1,5 @@
 node_modules
 dist/
 test/unit/__snapshots__
+test/unit/components/__snapshots__
 coverage

@@ -1,23 +1,20 @@
 /* eslint-disable no-undef */
 import { shallow } from '@vue/test-utils';
-import App from '@/App.vue';
-import Vue from 'vue';
-import vueRouter from 'vue-router';
+import About from '@/components/About.vue';
 
-describe('App.vue', () => {
+describe('About.vue', () => {
   let cmp;
 
   beforeEach(() => {
-    Vue.use(vueRouter);
-    cmp = shallow(App, { // Create a shallow instance of the component
+    cmp = shallow(About, { // Create a shallow instance of the component
       data: {
         messages: ['Cat'], // Insert fake data
       },
     });
   });
 
-  it('equals name to "App"', () => {
-    expect(cmp.name()).toEqual('App');
+  it('equals name to "About"', () => {
+    expect(cmp.name()).toEqual('About');
   });
 
   it('equals fake data messages to ["Cat"]', () => {

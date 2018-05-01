@@ -1,10 +1,11 @@
 <template lang='pug'>
-  router-view
+  div
+    h2 About
 </template>
 
 <script>
 export default {
-  name: 'App',
+  name: 'About',
 };
 </script>
 
