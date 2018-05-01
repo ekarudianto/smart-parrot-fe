@@ -1,7 +1,7 @@
 {
-  "name": "hotel_booking_client",
+  "name": "vue2_starter",
   "version": "1.0.0",
-  "description": "Hotel booking client",
+  "description": "Vuejs 2 starter template",
   "main": "src/main.js",
   "author": "Eka Rudianto",
   "license": "MIT",
@@ -47,7 +47,7 @@
     "vue-template-compiler": "^2.5.13",
     "vuejs-logger": "^1.3.4"
   },
-  "repository": "https://github.com/ekarudianto/resume-parser.git",
+  "repository": "https://github.com/ekarudianto/vue-2-starter-template.git",
   "jest": {
     "moduleFileExtensions": [
       "js",
