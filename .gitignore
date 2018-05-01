@@ -1,0 +1,4 @@
+node_modules
+dist/
+test/unit/__snapshots__
+coverage
