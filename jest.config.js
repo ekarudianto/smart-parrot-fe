@@ -16,6 +16,7 @@ const jestConfig = {
 };
 
 if (process.env.test === 'e2e') {
+  jestConfig.setupFiles = ['<rootDir>/jest.init.js'];
   jestConfig.globalSetup = './puppeteer_setup.js';
   jestConfig.globalTeardown = './puppeteer_teardown.js';
   jestConfig.testEnvironment = './puppeteer_env.js';
