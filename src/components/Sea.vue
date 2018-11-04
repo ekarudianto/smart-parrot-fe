@@ -15,5 +15,6 @@ export default {
     height: 100%;
     position: fixed;
     width: 100%;
+    z-index: 3;
   }
 </style>

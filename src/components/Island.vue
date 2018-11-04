@@ -22,7 +22,7 @@ export default {
       bottom: 30px;
       position: fixed;
       width: 500px;
-      z-index: 2;
+      z-index: 5;
     }
   }
 </style>

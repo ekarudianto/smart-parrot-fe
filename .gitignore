@@ -3,3 +3,4 @@ dist/
 test/unit/__snapshots__
 test/unit/components/__snapshots__
 coverage
+.DS_Store

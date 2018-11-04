@@ -2,6 +2,7 @@
   .home
     Sun
     Island
+    Ship
     Sea
 </template>
 
@@ -9,6 +10,7 @@
 import Island from './Island.vue';
 import Sea from './Sea.vue';
 import Sun from './Sun.vue';
+import Ship from './Ship.vue';
 
 export default {
   name: 'Home',
@@ -16,6 +18,7 @@ export default {
     Island,
     Sea,
     Sun,
+    Ship,
   },
 };
 </script>
