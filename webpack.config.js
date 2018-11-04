@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
-const WEB_TITLE = 'Vue 2 starter template';
+const WEB_TITLE = 'Smart parrot frontend';
 
 module.exports = {
   entry: './src/main.js',
@@ -33,6 +33,16 @@ module.exports = {
       {
         test: /\.vue$/,
         loaders: ['vue-loader', 'eslint-loader'],
+      },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 30000,
+            name: 'assets/[name].[ext]',
+          },
+        }],
       },
     ],
   },
