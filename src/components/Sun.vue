@@ -1,5 +1,5 @@
 <template lang='pug'>
-  .sun
+  .sun(:class="{ gray: isDisplayModal }")
     .sun__ray
       .ray.ray--1
       .ray.ray--2
@@ -16,6 +16,12 @@
 <script>
 export default {
   name: 'Sun',
+  props: {
+    isDisplayModal: {
+      type: Boolean,
+      required: true,
+    },
+  },
 };
 </script>
 
@@ -28,9 +34,15 @@ export default {
     width:70px;
     height:70px;
     border-radius:50%;
-    background:white;
+    background:#FFF;
     opacity:0.9;
-    box-shadow: 0px 0px 40px 15px white;
+    box-shadow: 0px 0px 40px 15px #FFF;
+    z-index: 3;
+
+    &.gray {
+      background: #808080;
+      box-shadow: 0px 0px 40px 15px #808080;
+    }
 
     .sun__ray {
       position: absolute;

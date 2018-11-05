@@ -1,6 +1,9 @@
 <template lang='pug'>
   .parrot
-    img(:src="img")
+    img(
+      :src="img"
+      @click="onClick"
+    )
 </template>
 
 <script>
@@ -12,6 +15,11 @@ export default {
     return {
       img,
     };
+  },
+  methods: {
+    onClick() {
+      this.$parent.toggleModal();
+    },
   },
 };
 </script>

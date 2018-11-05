@@ -1,13 +1,15 @@
 <template lang='pug'>
   .home
-    Sun
+    Sun(:is-display-modal="isDisplayModal")
+    Clouds(:is-display-modal="isDisplayModal")
     Parrot
-    Island
-    Ship
-    Sea
+    Island(:is-display-modal="isDisplayModal")
+    Ship(:is-display-modal="isDisplayModal")
+    Sea(:is-display-modal="isDisplayModal")
 </template>
 
 <script>
+import Clouds from './Clouds.vue';
 import Island from './Island.vue';
 import Parrot from './Parrot.vue';
 import Sea from './Sea.vue';
@@ -17,11 +19,23 @@ import Ship from './Ship.vue';
 export default {
   name: 'Home',
   components: {
+    Clouds,
     Island,
     Parrot,
     Sea,
     Sun,
     Ship,
+  },
+  data() {
+    return {
+      isDisplayModal: false,
+    };
+  },
+  methods: {
+    toggleModal() {
+      console.log('Parrot is clicked display modal!');
+      this.isDisplayModal = !this.isDisplayModal;
+    },
   },
 };
 </script>

@@ -1,10 +1,16 @@
 <template lang='pug'>
-  .sea
+  .sea(:class="{ gray: isDisplayModal }")
 </template>
 
 <script>
 export default {
   name: 'Sea',
+  props: {
+    isDisplayModal: {
+      type: Boolean,
+      required: true,
+    },
+  },
 };
 </script>
 
@@ -16,5 +22,9 @@ export default {
     position: fixed;
     width: 100%;
     z-index: 3;
+
+    &.gray {
+      background-color: #808080;
+    }
   }
 </style>
