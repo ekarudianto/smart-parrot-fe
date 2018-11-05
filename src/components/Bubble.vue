@@ -5,7 +5,7 @@
     .bubble__dialog(v-if="isDisplayModal")
       .close-dialog
         a(@click="onCloseClick") &times;
-      div
+      .parrot-msg
         vue-typer(:text="parrotMsg")
       Dialog(:dialogs="dialogs")
       .preloader
@@ -23,6 +23,7 @@ import { VueTyper } from 'vue-typer';
 import Dialog from './Dialog.vue';
 
 const BACKEND_URL = 'https://api.myjson.com/bins/10ospy';
+const DEFAULT_MSG = ['Hi ! My name is Smartee', 'Have problem with travel destination ?', 'Speak with me !'];
 
 export default {
   name: 'Bubble',
@@ -39,7 +40,7 @@ export default {
   data() {
     return {
       dialogs: [],
-      parrotMsg: ['Hi ! my name is smartee'],
+      parrotMsg: DEFAULT_MSG,
       message: '',
       isFetchData: false,
     };
@@ -117,6 +118,10 @@ export default {
           color: #2EB5E5;
         }
       }
+    }
+
+    .parrot-msg {
+      margin: 5px 0;
     }
 
     .preloader {
