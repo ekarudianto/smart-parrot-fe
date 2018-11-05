@@ -8,6 +8,8 @@
       div
         vue-typer(:text="parrotMsg")
       Dialog(:dialogs="dialogs")
+      .preloader
+        span(v-if="isFetchData") Smartee is typing ...
       .input
         form(v-on:submit.prevent="onSubmit")
           input(type="text" name="input" v-model="message")
@@ -20,7 +22,7 @@
 import { VueTyper } from 'vue-typer';
 import Dialog from './Dialog.vue';
 
-const BACKEND_URL = 'https://api.myjson.com/bins/8n2eu';
+const BACKEND_URL = 'https://api.myjson.com/bins/10ospy';
 
 export default {
   name: 'Bubble',
@@ -39,6 +41,7 @@ export default {
       dialogs: [],
       parrotMsg: ['Hi ! my name is smartee'],
       message: '',
+      isFetchData: false,
     };
   },
   methods: {
@@ -59,8 +62,9 @@ export default {
           result: message,
         });
 
-        // TODO : Add new response inside
+        this.isFetchData = true;
         this.axios.get(`${BACKEND_URL}?text=${message}`).then((res) => {
+          this.isFetchData = false;
           if (res.data.length) {
             this.dialogs.push({
               type: 'response',
@@ -113,6 +117,15 @@ export default {
           color: #2EB5E5;
         }
       }
+    }
+
+    .preloader {
+      font-size: 9px;
+      color: #333;
+      height: 13px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      font-style: italic;
     }
 
     .input {

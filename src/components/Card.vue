@@ -3,12 +3,14 @@
     .card(
       v-for="(item, index) in items"
       :key="item.id"
+      @click="onClick(item.url)"
     )
       .card__image
-        //img(:src="`https://media.urlaubspiraten.de${item.image.url['medium-retina']}`")
-        img(src="https://www.visitberlin.de/system/files/styles/visitberlin_teaser_single_visitberlin_mobile_1x/private/image/_SCH6057_c_Scholvien_PSR_SC_STD_V2_DL_PPT_0.jpg?h=32462309&itok=Xi0CMgn5")
+        img(:src="item.image.url.medium")
       .card__description
-        .title {{ item.short_title }}
+        .title {{ item.title }}
+        .published
+        .price {{ item.price.human }}
 </template>
 
 <script>
@@ -18,6 +20,12 @@ export default {
     items: {
       type: Array,
       required: true,
+    },
+  },
+  methods: {
+    onClick(url) {
+      const fullUrl = `https://www.urlaubspiraten.de${url}`;
+      window.open(fullUrl);
     },
   },
 };
@@ -44,6 +52,16 @@ export default {
 
       .card__description {
         padding: 10px;
+
+        .title {
+          font-size: 13px;
+        }
+
+        .price {
+          margin-top: 10px;
+          font-weight: bold;
+          font-size: 14px;
+        }
       }
     }
   }
