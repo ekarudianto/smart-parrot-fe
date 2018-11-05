@@ -32,10 +32,11 @@ export default {
       z-index: 6;
       bottom: 20px;
       left: 290px;
+      animation: shake 1s cubic-bezier(.36,.07,.19,.97) both infinite;
 
       &:hover {
         cursor: pointer;
-        animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+        animation: none;
       }
     }
   }
