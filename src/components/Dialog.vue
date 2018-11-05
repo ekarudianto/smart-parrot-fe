@@ -44,6 +44,7 @@ export default {
         border-radius: 5px;
         background: #79CB1A;
         position: relative;
+        box-shadow: 0px 2px 9px 1px rgba(214,214,214,1);
       }
 
       .dialog__request {
@@ -54,6 +55,7 @@ export default {
         background: #F6C12B;
         float: right;
         position: relative;
+        box-shadow: 0px 2px 9px 1px rgba(214,214,214,1);
       }
     }
   }
