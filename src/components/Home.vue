@@ -1,5 +1,5 @@
 <template lang='pug'>
-  .home
+  .home(:class="{ gray: isDisplayModal }")
     Sun(:is-display-modal="isDisplayModal")
     Clouds(:is-display-modal="isDisplayModal")
     Parrot(:is-display-modal="isDisplayModal")
@@ -44,5 +44,13 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-  .home {}
+  .home {
+    width: 100%;
+    height: 100%;
+    background-color: #2EB5E5;
+
+    &.gray {
+      background-color: #b5b5b5;
+    }
+  }
 </style>
