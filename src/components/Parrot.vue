@@ -2,6 +2,7 @@
   .parrot
     img(
       :src="img"
+      :class="{silence: isDisplayModal}"
       @click="onClick"
     )
 </template>
@@ -11,6 +12,12 @@ import img from '@/assets/parrot.png';
 
 export default {
   name: 'Parrot',
+  props: {
+    isDisplayModal: {
+      type: Boolean,
+      required: true,
+    },
+  },
   data() {
     return {
       img,
@@ -18,6 +25,10 @@ export default {
   },
   methods: {
     onClick() {
+      if (this.isDisplayModal) {
+        return;
+      }
+
       this.$parent.toggleModal();
     },
   },
@@ -29,10 +40,15 @@ export default {
     img {
       position: fixed;
       width: 250px;
-      z-index: 6;
+      z-index: 7;
       bottom: 20px;
       left: 290px;
       animation: shake 1s cubic-bezier(.36,.07,.19,.97) both infinite;
+
+      &.silence {
+        animation: none !important;
+        cursor: default !important;
+      }
 
       &:hover {
         cursor: pointer;

@@ -2,7 +2,7 @@
   .home
     Sun(:is-display-modal="isDisplayModal")
     Clouds(:is-display-modal="isDisplayModal")
-    Parrot
+    Parrot(:is-display-modal="isDisplayModal")
     Bubble(:is-display-modal="isDisplayModal")
     Island(:is-display-modal="isDisplayModal")
     Ship(:is-display-modal="isDisplayModal")
@@ -31,12 +31,12 @@ export default {
   },
   data() {
     return {
-      isDisplayModal: false,
+      isDisplayModal: true,
     };
   },
   methods: {
     toggleModal() {
-      console.log('Parrot is clicked display modal!');
+      console.log('Parrot is clicked, display modal!');
       this.isDisplayModal = !this.isDisplayModal;
     },
   },
