@@ -10,7 +10,7 @@ module.exports = {
     overlay: true,
     proxy: {
       '/api': {
-        target: 'http://pirate-amp.lndo.site/cutty-sark/api/v1',
+        target: 'https://api.myjson.com/bins/10ospy',
         pathRewrite: { '^/api': '' },
         secure: false,
       },

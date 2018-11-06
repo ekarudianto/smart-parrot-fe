@@ -24,7 +24,7 @@ import { VueTyper } from 'vue-typer';
 import Dialog from './Dialog.vue';
 import Tags from './Tags.vue';
 
-const BACKEND_URL = 'https://api.myjson.com/bins/10ospy';
+const BACKEND_URL = '/api';
 const DEFAULT_MSG = [
   'Hi ! My name is Smartee',
   'Have problem with travel destination ideas ?',
