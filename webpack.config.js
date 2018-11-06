@@ -11,6 +11,7 @@ module.exports = {
     proxy: {
       '/api': {
         target: 'http://pirate-amp.lndo.site/cutty-sark/api/v1',
+        pathRewrite: { '^/api': '' },
         secure: false,
       },
     },
