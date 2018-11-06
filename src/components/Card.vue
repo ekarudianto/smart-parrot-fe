@@ -9,7 +9,7 @@
         img(:src="item.image.url.medium")
       .card__description
         .title {{ item.title }}
-        .published
+        .destination {{ item.destination }}
         .price {{ item.price.human }}
 </template>
 
@@ -41,12 +41,20 @@ export default {
       &:hover {
         cursor: pointer;
         color: #2EB5E5;
+
+        .card__image {
+          img {
+            transform: scale(1.2);
+          }
+        }
       }
 
       .card__image {
+        overflow: hidden;
         img {
           width: 100%;
           border-radius: 3px 3px 0 0;
+          transition: transform .2s;
         }
       }
 
@@ -57,10 +65,16 @@ export default {
           font-size: 13px;
         }
 
+        .destination {
+          margin-top: 10px;
+          font-size: 10px;
+          font-style: italic;
+        }
+
         .price {
           margin-top: 10px;
-          font-weight: bold;
-          font-size: 14px;
+          font-weight: 700;
+          font-size: 16px;
         }
       }
     }
