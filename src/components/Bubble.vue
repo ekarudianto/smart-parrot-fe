@@ -82,6 +82,12 @@ export default {
               result: res.data,
             });
 
+            // TODO : This is error handling !
+            // this.dialogs.push({
+            //   type: 'response',
+            //   error: 'hei',
+            // });
+
             let timeout = null;
             timeout = setTimeout(() => {
               const container = document.querySelectorAll('.dialogs');

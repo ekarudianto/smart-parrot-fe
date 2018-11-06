@@ -1,7 +1,12 @@
 <template lang='pug'>
   .cards
     .card(
+      v-if="error !== null"
+      :class="{ error : error !== null}"
+    ) We don't have that !
+    .card(
       v-for="(item, index) in items"
+      v-if="items.length"
       :key="item.id"
       @click="onClick(item.url)"
     )
@@ -19,7 +24,13 @@ export default {
   props: {
     items: {
       type: Array,
-      required: true,
+      default: () => [],
+      required: false,
+    },
+    error: {
+      type: String,
+      default: null,
+      required: false,
     },
   },
   methods: {
@@ -37,6 +48,11 @@ export default {
       background: #FFF;
       margin: 5px 0;
       border-radius: 3px;
+
+      &.error {
+        background: transparent;
+        color: #FFF;
+      }
 
       &:hover {
         cursor: pointer;

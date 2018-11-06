@@ -8,7 +8,14 @@
     )
       .dialog__request(v-if="dialog.type === 'request'") {{ dialog.result }}
       .dialog__response(v-if="dialog.type === 'response'")
-        Card(:items="dialog.result")
+        Card(
+          v-if="dialog.result"
+          :items="dialog.result"
+        )
+        Card(
+          v-if="dialog.error"
+          :error="dialog.error"
+        )
 </template>
 
 <script>
