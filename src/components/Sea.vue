@@ -17,8 +17,8 @@ export default {
 <style lang='scss' scoped>
   .sea {
     background-color: #20B1AA;
-    bottom: -90%;
-    height: 100%;
+    bottom: 0;
+    height: 70px;
     position: fixed;
     width: 100%;
     z-index: 3;

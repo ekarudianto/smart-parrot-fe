@@ -88,8 +88,8 @@ export default {
     height: 100%;
     background: #FFF;
     border-radius: 50%;
-    bottom: 40%;
-    left: 33%;
+    bottom: 290px;
+    left: 490px;
     z-index: 6;
     transition: max-width .7s, max-height .7s;
 
