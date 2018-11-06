@@ -4,6 +4,7 @@
       v-if="error !== null"
       :class="{ error : error !== null}"
     ) {{ error }}
+    .card.error(v-if="items.length") We found {{items.length}} deals
     .card(
       v-for="(item, index) in items"
       v-if="items.length"
