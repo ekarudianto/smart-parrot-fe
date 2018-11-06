@@ -81,6 +81,14 @@ export default {
               type: 'response',
               result: res.data,
             });
+
+            let timeout = null;
+            timeout = setTimeout(() => {
+              const container = document.querySelectorAll('.dialogs');
+              container[0].scrollTop = container[0].scrollHeight;
+              clearTimeout(timeout);
+              timeout = null;
+            }, 50);
           }
         });
       }
