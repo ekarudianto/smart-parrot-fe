@@ -27,7 +27,7 @@ import Tags from './Tags.vue';
 const BACKEND_URL = 'https://api.myjson.com/bins/10ospy';
 const DEFAULT_MSG = [
   'Hi ! My name is Smartee',
-  'Have problem with travel destination ?',
+  'Have problem with travel destination ideas ?',
   'Speak with me !',
 ];
 
