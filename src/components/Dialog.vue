@@ -30,7 +30,7 @@ export default {
 
 <style lang='scss' scoped>
   .dialogs {
-    height: 320px;
+    height: 260px;
     overflow-y: auto;
 
     .dialog {
@@ -49,6 +49,7 @@ export default {
 
       .dialog__request {
         width: 200px;
+        height: 80px;
         padding: 5px;
         margin: 5px 0;
         border-radius: 5px;

@@ -10,6 +10,7 @@
       Dialog(:dialogs="dialogs")
       .preloader
         span(v-if="isFetchData") Smartee is typing ...
+      Tags
       .input
         form(v-on:submit.prevent="onSubmit")
           input(type="text" name="input" v-model="message")
@@ -21,14 +22,20 @@
 <script>
 import { VueTyper } from 'vue-typer';
 import Dialog from './Dialog.vue';
+import Tags from './Tags.vue';
 
 const BACKEND_URL = 'https://api.myjson.com/bins/10ospy';
-const DEFAULT_MSG = ['Hi ! My name is Smartee', 'Have problem with travel destination ?', 'Speak with me !'];
+const DEFAULT_MSG = [
+  'Hi ! My name is Smartee',
+  'Have problem with travel destination ?',
+  'Speak with me !',
+];
 
 export default {
   name: 'Bubble',
   components: {
     Dialog,
+    Tags,
     VueTyper,
   },
   props: {
@@ -40,9 +47,9 @@ export default {
   data() {
     return {
       dialogs: [],
-      parrotMsg: DEFAULT_MSG,
-      message: '',
       isFetchData: false,
+      message: '',
+      parrotMsg: DEFAULT_MSG,
     };
   },
   methods: {
@@ -52,6 +59,9 @@ export default {
         this.message = '';
       }
       this.$parent.toggleModal();
+    },
+    setMsg(msg) {
+      this.message = msg;
     },
     onSubmit() {
       const { message } = this;
@@ -147,6 +157,7 @@ export default {
         background: #FFF;
         padding: 10px 15px;
         margin-left: 5px;
+        cursor: pointer;
       }
     }
 
