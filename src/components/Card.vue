@@ -3,7 +3,7 @@
     .card(
       v-if="error !== null"
       :class="{ error : error !== null}"
-    ) We don't have that !
+    ) {{ error }}
     .card(
       v-for="(item, index) in items"
       v-if="items.length"

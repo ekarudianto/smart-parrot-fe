@@ -89,11 +89,6 @@ export default {
               type: 'response',
               result: res.data,
             });
-          } else if (!res.data.length) {
-            this.dialogs.push({
-              type: 'response',
-              error: 'We don\'t have any deals for you at the moment :(',
-            });
           }
 
           // let timeout = null;
