@@ -76,6 +76,14 @@ export default {
         this.isFetchData = true;
         this.axios.get(`${BACKEND_URL}?text=${message}`).then((res) => {
           this.isFetchData = false;
+
+          if (res.data.error === 'true') {
+            this.dialogs.push({
+              type: 'response',
+              error: 'We don\'t have any deals for you at the moment :(',
+            });
+          }
+
           if (res.data.length) {
             this.dialogs.push({
               type: 'response',
