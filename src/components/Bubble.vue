@@ -98,6 +98,12 @@ export default {
           //   clearTimeout(timeout);
           //   timeout = null;
           // }, 50);
+        }).catch(() => {
+          this.isFetchData = false;
+          this.dialogs.push({
+            type: 'response',
+            error: 'We\'re having technical difficulties, can you try again :(',
+          });
         });
       }
     },
