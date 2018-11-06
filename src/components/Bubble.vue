@@ -81,21 +81,20 @@ export default {
               type: 'response',
               result: res.data,
             });
-
-            // TODO : This is error handling !
-            // this.dialogs.push({
-            //   type: 'response',
-            //   error: 'hei',
-            // });
-
-            let timeout = null;
-            timeout = setTimeout(() => {
-              const container = document.querySelectorAll('.dialogs');
-              container[0].scrollTop = container[0].scrollHeight;
-              clearTimeout(timeout);
-              timeout = null;
-            }, 50);
+          } else if (!res.data.length) {
+            this.dialogs.push({
+              type: 'response',
+              error: 'We don\'t have any deals for you at the moment :(',
+            });
           }
+
+          let timeout = null;
+          timeout = setTimeout(() => {
+            const container = document.querySelectorAll('.dialogs');
+            container[0].scrollTop = container[0].scrollHeight;
+            clearTimeout(timeout);
+            timeout = null;
+          }, 50);
         });
       }
     },
