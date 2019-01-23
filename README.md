@@ -1,3 +1,5 @@
+This project was intended for fulfilling HolidayPirates GmbH hackathon event
+
 - Clone the project
 - Run `yarn install` to install the dependencies
 - Run `yarn serve` to run the development mode
